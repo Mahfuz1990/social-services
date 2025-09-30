@@ -9,6 +9,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body { 
@@ -17,6 +20,7 @@
       color:#333;
     }
 
+    /* Header Styling */
     header { 
       background: linear-gradient(135deg, #1f1c2c, #928DAB);
       color:white; 
@@ -27,6 +31,7 @@
     header h3 {font-weight:400; margin-bottom:10px;}
     header p {color:#ddd; font-size:1rem;}
 
+    /* Service Section */
     section { 
       max-width:1200px; 
       margin:50px auto; 
@@ -36,21 +41,22 @@
       padding:0 20px;
     }
 
+    /* Card Styling */
     .card { 
       background:white; 
       border-radius:12px; 
       box-shadow:0 5px 20px rgba(0,0,0,0.08); 
-      padding:25px; 
+      padding:30px 25px; 
       text-align:center; 
       transition:transform 0.5s ease, opacity 0.8s ease;
       position:relative; 
       overflow:hidden;
-      opacity:0; /* initially invisible */
-      transform:translateY(40px); /* start lower */
+      opacity:0; /* initially hidden */
+      transform:translateY(40px);
     }
     .card.show { 
       opacity:1; 
-      transform:translateY(0); /* slide up */
+      transform:translateY(0);
     }
     .card::before {
       content:"";
@@ -59,9 +65,19 @@
       width:100%; height:5px;
       background:linear-gradient(90deg, #1877f2, #C13584, #34A853);
     }
+
+    .card i {
+      font-size:45px; 
+      margin-bottom:15px; 
+      color:#1877f2; 
+    }
+    .ig-icon {color:#C13584;}
+    .gg-icon {color:#34A853;}
+
     .card h2 { margin-bottom:15px; color:#222;}
     .card p { font-size:15px; color:#555; margin-bottom:20px;}
 
+    /* Button */
     .btn { 
       display:inline-block; 
       padding:12px 22px; 
@@ -81,6 +97,7 @@
     .gg {background:#34A853;}
     .gg:hover {background:#278a41;}
 
+    /* Footer */
     footer {
       text-align:center; 
       padding:25px 15px; 
@@ -102,42 +119,18 @@
   <!-- Service Section -->
   <section>
     <div class="card">
+      <i class="fab fa-facebook-square"></i>
       <h2>Facebook Management</h2>
       <p>পেজ ম্যানেজমেন্ট, কনটেন্ট স্ট্র্যাটেজি, বিজ্ঞাপন ম্যানেজমেন্ট ও অ্যানালিটিক্স।</p>
       <a class="btn fb" href="facebook.html">বিস্তারিত দেখুন</a>
     </div>
     <div class="card">
+      <i class="fab fa-instagram ig-icon"></i>
       <h2>Instagram Growth</h2>
       <p>সৃজনশীল কনটেন্ট, আসল ফলোয়ার বৃদ্ধি এবং Reach অপ্টিমাইজেশন।</p>
       <a class="btn ig" href="instagram.html">বিস্তারিত দেখুন</a>
     </div>
     <div class="card">
+      <i class="fas fa-map-marker-alt gg-icon"></i>
       <h2>Google My Business</h2>
-      <p>লোকাল সার্চে উজ্জ্বল উপস্থিতি, প্রোফাইল অপ্টিমাইজেশন ও কাস্টমার রিভিউ ম্যানেজমেন্ট।</p>
-      <a class="btn gg" href="google.html">বিস্তারিত দেখুন</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © ২০২৫ It Digital Agency | Developed with <span>❤️</span> by Mahfuzur Rahman
-  </footer>
-
-  <!-- Scroll Animation Script -->
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    }, {threshold:0.2});
-
-    cards.forEach(card => {
-      observer.observe(card);
-    });
-  </script>
-</body>
-</html>
+      <p>লোকাল সার্চে উজ্জ্বল উপস্থিতি, প্রোফাইল অপ্টিমাইজেশন ও কাস্টমার রিভিউ 
