@@ -9,117 +9,42 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body { 
-      font-family: 'Roboto', sans-serif; 
-      background:#f9fafc; 
-      color:#333;
+    body { font-family: 'Roboto', sans-serif; background:#f9fafc; margin:0; padding:0; }
+    header { background:linear-gradient(135deg,#1f1c2c,#928Dab); color:#fff; text-align:center; padding:60px 20px; }
+    header h1{font-size:2.5rem;margin-bottom:10px;}
+    section {
+      max-width:1200px; margin:40px auto; display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px; padding:0 20px;
     }
-
-    /* Header Styling */
-    header { 
-      background: linear-gradient(135deg, #1f1c2c, #928DAB);
-      color:white; 
-      padding:60px 20px; 
-      text-align:center;
+    .card {
+      background:#fff; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,.1);
+      text-align:center; padding:30px; transition:.3s;
+      /* default: visible fix */
+      opacity:1; transform:translateY(0);
     }
-    header h1 {font-size:2.5rem; margin-bottom:10px;}
-    header h3 {font-weight:400; margin-bottom:10px;}
-    header p {color:#ddd; font-size:1rem;}
-
-    /* Service Section */
-    section { 
-      max-width:1200px; 
-      margin:50px auto; 
-      display:grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap:25px; 
-      padding:0 20px;
-    }
-
-    /* Card Styling */
-    .card { 
-      background:white; 
-      border-radius:12px; 
-      box-shadow:0 5px 20px rgba(0,0,0,0.08); 
-      padding:30px 25px; 
-      text-align:center; 
-      transition:transform 0.5s ease, opacity 0.8s ease;
-      position:relative; 
-      overflow:hidden;
-      opacity:0; /* initially hidden */
-      transform:translateY(40px);
-    }
-    .card.show { 
-      opacity:1; 
-      transform:translateY(0);
-    }
-    .card::before {
-      content:"";
-      position:absolute;
-      top:0; left:0;
-      width:100%; height:5px;
-      background:linear-gradient(90deg, #1877f2, #C13584, #34A853);
-    }
-
-    .card i {
-      font-size:45px; 
-      margin-bottom:15px; 
-      color:#1877f2; 
-    }
-    .ig-icon {color:#C13584;}
-    .gg-icon {color:#34A853;}
-
-    .card h2 { margin-bottom:15px; color:#222;}
-    .card p { font-size:15px; color:#555; margin-bottom:20px;}
-
-    /* Button */
-    .btn { 
-      display:inline-block; 
-      padding:12px 22px; 
-      border-radius:6px; 
-      text-decoration:none; 
-      color:white; 
-      font-weight:600; 
-      transition: all 0.3s ease;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    }
-    .btn:hover { transform:scale(1.05); }
-
-    .fb {background:#1877f2;}
-    .fb:hover {background:#145ad6;}
-    .ig {background:#C13584;}
-    .ig:hover {background:#a12c72;}
-    .gg {background:#34A853;}
-    .gg:hover {background:#278a41;}
-
-    /* Footer */
-    footer {
-      text-align:center; 
-      padding:25px 15px; 
-      background:#222; 
-      color:#aaa; 
-      font-size:14px;
-    }
-    footer span {color:#f44336; font-weight:bold;}
+    .card:hover {transform:translateY(-6px); box-shadow:0 10px 25px rgba(0,0,0,.15);}
+    .card i {font-size:45px; margin-bottom:15px;}
+    .fb-icon {color:#1877f2;} .ig-icon{color:#C13584;} .gg-icon{color:#34A853;}
+    .btn {display:inline-block;padding:10px 18px;border-radius:6px;color:#fff;text-decoration:none;font-weight:bold;}
+    .fb{background:#1877f2;} .ig{background:#C13584;} .gg{background:#34A853;}
+    footer{background:#222; color:#aaa; text-align:center; padding:20px; margin-top:30px;}
   </style>
 </head>
 <body>
-  <!-- Header Section -->
   <header>
     <h1>It Digital Agency</h1>
     <h3>আমাদের সোশ্যাল মিডিয়া সার্ভিসসমূহ</h3>
     <p>আপনার ব্যবসাকে অনলাইনে বাড়াতে আমাদের পেশাদার টুলস ও সলিউশন</p>
   </header>
 
-  <!-- Service Section -->
   <section>
     <div class="card">
-      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-facebook-square fb-icon"></i>
       <h2>Facebook Management</h2>
       <p>পেজ ম্যানেজমেন্ট, কনটেন্ট স্ট্র্যাটেজি, বিজ্ঞাপন ম্যানেজমেন্ট ও অ্যানালিটিক্স।</p>
       <a class="btn fb" href="facebook.html">বিস্তারিত দেখুন</a>
@@ -133,4 +58,13 @@
     <div class="card">
       <i class="fas fa-map-marker-alt gg-icon"></i>
       <h2>Google My Business</h2>
-      <p>লোকাল সার্চে উজ্জ্বল উপস্থিতি, প্রোফাইল অপ্টিমাইজেশন ও কাস্টমার রিভিউ 
+      <p>লোকাল সার্চে উজ্জ্বল উপস্থিতি, প্রোফাইল অপ্টিমাইজেশন ও কাস্টমার রিভিউ ম্যানেজমেন্ট।</p>
+      <a class="btn gg" href="google.html">বিস্তারিত দেখুন</a>
+    </div>
+  </section>
+
+  <footer>
+    © ২০২৫ It Digital Agency | Developed with ❤️ by Mahfuzur Rahman
+  </footer>
+</body>
+</html>
